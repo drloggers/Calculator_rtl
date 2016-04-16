@@ -1,0 +1,24 @@
+var g_sourceLines = [
+'/* This is top level module for calculator which consist of keypad controller, control logic and 7-seg display',
+' * each display unit has 8 pins for connection and has 4 digits display.',
+' * --Sanket',
+'*/',
+'`timescale 1 ns / 1 ns',
+'module calculator #(parameter BCDdigits = 2,parameter cols_count=4,parameter rows_count=4)(',
+'                                                                                          input clk,rst,start,',
+'                                                                                          output [cols_count-1:0] cols,',
+'                                                                                          input [rows_count-1:0] rows,',
+'                                                                                          output reg [7:0] digit1,digit2,digit3,digit4,',
+'                                                                                          output reg sign);',
+'  wire [BCDdigits*4*2-1:0] display;',
+'  wire [3:0]encode_data;',
+'  wire done,ack;',
+'',
+'  keypad_controller kpad_controller(.clk(clk), .rst(rst), .enable(start), .ack(ack),.cols(cols),.rows(rows),.encode_data(encode_data),.done(done));',
+'  control_logic control_logic(.data(encode_data), .clk(clk), .rst(rst), .done(done), .ack(ack), .display(display),.sign(sign));',
+'  display disp(.display_data(display[15:0]),.seven_seg_data1(digit1),.seven_seg_data2(digit2),.seven_seg_data3(digit3),.seven_seg_data4(digit4));',
+'',
+' endmodule',
+''
+];
+countinueBuildStmtTable(g_sourceLines);

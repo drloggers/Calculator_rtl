@@ -1,0 +1,14 @@
+./DUT/BCD2binary.v
+./DUT/BCD2seg7.v
+./DUT/Keypad_encoder_4x4.v
+./DUT/alu.sv
+./DUT/binary2BCD.sv
+./DUT/calculator.sv
+./DUT/control_logic.sv
+./DUT/display.v
+./DUT/keypad.v
+./DUT/keypad_controller.sv
+./DUT/keypad_scanner.sv
+./env/./cal_env/uvmtb_cal_coverage.svh
+./env/uvmtb_env_pkg.sv
+./top/top.sv

@@ -1,0 +1,88 @@
+var g_data = {
+f1402231845_1364305805_0:{
+scopes:[{link:'z.htm?f=0&s=1402231845_1364305805_0',val:'work.keypad_scanner'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg905',items:[{c:'G',p:'100.00',lnk:'__HDL_srcfile_5.htm#75',z:'state'}
+,{cr:'c',s:'1',z:'scan_rows',h:'1',c:'g'}
+,{cr:'c',z:'scan_rows -> detect_row',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'detect_row',h:'1',c:'g'}
+,{cr:'c',z:'detect_row -> wait_key_release',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'wait_key_release',h:'1',c:'g'}
+,{cr:'c',z:'wait_key_release -> scan_rows',h:'1',c:'g'}
+]}
+
+],
+},
+f2864170569_0136654734_0:{
+scopes:[{i:0,s:'0001515206_0003956198_0',val:'top'},{link:'z.htm?f=0&s=3461689182_0605641186_0',val:'cal'},{link:'z.htm?f=0&s=3867178935_3862987602_0',val:'kpad_controller'},{link:'z.htm?f=0&s=2864170569_0136654734_0',val:'kpad_scanner'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg905',items:[{c:'G',p:'100.00',lnk:'__HDL_srcfile_5.htm#75',z:'state'}
+,{cr:'c',s:'1',z:'scan_rows',h:'1',c:'g'}
+,{cr:'c',z:'scan_rows -> detect_row',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'detect_row',h:'1',c:'g'}
+,{cr:'c',z:'detect_row -> wait_key_release',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'wait_key_release',h:'1',c:'g'}
+,{cr:'c',z:'wait_key_release -> scan_rows',h:'1',c:'g'}
+]}
+
+],
+},
+f0622404178_2601693496_0:{
+scopes:[{link:'z.htm?f=0&s=0622404178_2601693496_0',val:'work.control_logic'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg974',items:[{c:'G',p:'100.00',lnk:'__HDL_srcfile_10.htm#117',z:'state'}
+,{cr:'c',s:'1',z:'start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveBCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'receiveBCDdigits_set1 -> ack_BCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_BCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> receiveBCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> receiveOperation',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveOperation',h:'1',c:'g'}
+,{cr:'c',z:'receiveOperation -> ack_operation',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_operation',h:'1',c:'g'}
+,{cr:'c',z:'ack_operation -> receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'receiveBCDdigits_set2 -> ack_BCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_BCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> compute_and_continue',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'compute_and_continue',h:'1',c:'g'}
+,{cr:'c',z:'compute_and_continue -> ack_operation',h:'1',c:'g'}
+,{cr:'c',z:'compute_and_continue -> start',h:'1',c:'g'}
+]}
+
+],
+},
+f2948450320_3668302382_0:{
+scopes:[{i:0,s:'0001515206_0003956198_0',val:'top'},{link:'z.htm?f=0&s=3461689182_0605641186_0',val:'cal'},{link:'z.htm?f=0&s=2948450320_3668302382_0',val:'control_logic'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg974',items:[{c:'G',p:'100.00',lnk:'__HDL_srcfile_10.htm#117',z:'state'}
+,{cr:'c',s:'1',z:'start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveBCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'receiveBCDdigits_set1 -> ack_BCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_BCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> receiveBCDdigits_set1',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> receiveOperation',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set1 -> start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveOperation',h:'1',c:'g'}
+,{cr:'c',z:'receiveOperation -> ack_operation',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_operation',h:'1',c:'g'}
+,{cr:'c',z:'ack_operation -> receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'receiveBCDdigits_set2 -> ack_BCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'ack_BCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> receiveBCDdigits_set2',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> compute_and_continue',h:'1',c:'g'}
+,{cr:'c',z:'ack_BCDdigits_set2 -> start',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'compute_and_continue',h:'1',c:'g'}
+,{cr:'c',z:'compute_and_continue -> ack_operation',h:'1',c:'g'}
+,{cr:'c',z:'compute_and_continue -> start',h:'1',c:'g'}
+]}
+
+],
+},
+dummyEnd:0
+};
+processFsmData(g_data);

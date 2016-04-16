@@ -1,0 +1,63 @@
+To run the coverstore example use the command:
+make cover
+
+------------------------------------------------------------------------------------------------------------------------
+This projects has calculator as DUT and UVM Testbench along with functional coverage.
+
+-------- Designed and Coded by Sanket Borhade
+
+
+The following keypad is used as input to the DUT.
+Currently its 4x4 keypad. following is the layout:
+	
+  	0	1	2	3	
+  	4	5	6	7	
+  	8	9	+	-	
+  	*	/	=	c	
+	
+This calculator is able to perform addition, subtraction, multiplication and division operation.
+It also has clear option to clear the contents at any point of time. This calculator has ability
+to perform multiple operations before hitting equals(=)(example: 2+3*4/23*45+12=). This feature
+also enables to use signed operations indirectly(example: 0-2+1= gives result for -2+1). But
+you cannot input negative numbers directly using keypad(example: -2+1  such input from keypad 
+performs 2+1 operation).
+
+The maximum result that can be displayed on 4 digit 7 segment display is 9999. There is led to show
+negative results and can be viewed as follows:
+      _   _   _   _   
+    _|_| |_| |_| |_|
+     |_| |_| |_| |_|
+
+Every key press displays the corresponding key on the display and after every 2 operands and 2nd 
+operator result is displayed. Any operation key has no effect on the display and retains the previous
+value. 
+______________________________________________________________________________________________________
+
+UVM Testbench: (pictorial view of the setup is in uvmtb_design.pdf)
+
+AluPacket used for transaction:
+  int operand1;
+  int operand2;
+  operation operator1;
+  operation operator2;
+  int result;
+  int result_sign;
+  
+  operation can be --> add,sub,mul,div,equal,clear
+  
+______________________________________________________________________________________________________
+
+Procedure to run the UVM Testbench:
+
+1. if you just want to run the code and see results use "make cmd"
+2. if you want to see results in GUI and want to check result use "make debug"
+3. if you want to get coverage report use "Make cover" and then check the HTML report in ./covhtmlreport/index.html
+4. if you want to clean the workspace use "make clean"
+5. Entering "make" will give you all the options that you can use.
+_____________________________________________________________________________________________________
+
+Coverage:
+
+	If you want to know about the exclusions in the coverage, you can look into "exclusions" file for details and
+use "make cover" command for running the coverage on the DUT using SystemVerilog testbench. 
+______________________________________________________________________________________________________

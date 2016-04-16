@@ -1,0 +1,111 @@
+This file gives you details about the Exclusions done in coverage. This file is written by refering the 
+cover_run.do file and the DUT folder.
+
+
+Following are the reasons for the exclusions for coverage:
+------------------------------------------------------------------------------------------------------
+	coverage exclude -src ./DUT/alu.sv -line 27-28
+	coverage exclude -src ./DUT/alu.sv -line 29-31
+	coverage exclude -src ./DUT/alu.sv -line 41-45
+	coverage exclude -src ./DUT/alu.sv -line 59-66
+	coverage exclude -src ./DUT/alu.sv -line 69-71
+	coverage exclude -src ./DUT/alu.sv -line 84-86
+	coverage exclude -src ./DUT/alu.sv -line 92-94
+	coverage exclude -src ./DUT/alu.sv -line 57-58
+	coverage exclude -src ./DUT/alu.sv -line 67-68
+	coverage exclude -src ./DUT/alu.sv -line 82-83
+	coverage exclude -src ./DUT/alu.sv -line 90-91
+	coverage exclude -src ./DUT/alu.sv -line 102-103
+	coverage exclude -src ./DUT/alu.sv -line 110-111
+	coverage exclude -src ./DUT/alu.sv -line 104-106
+	coverage exclude -src ./DUT/alu.sv -line 112-114
+	coverage exclude -du alu -togglenode {result[31:19]}
+	coverage exclude -du alu -togglenode op2_sign
+	coverage exclude -src ./DUT/alu.sv -feccondrow 23
+	coverage exclude -src ./DUT/alu.sv -feccondrow 98
+	coverage exclude -src ./DUT/alu.sv -feccondrow 78
+	coverage exclude -src ./DUT/alu.sv -feccondrow 47
+coverage type : all
+reason		  : ALU performs signed operations. so both the operands can be negative or positive.
+				But according to DUT design, operand 2 can never get negative value as the input 
+				keypad does not support entering negative numbers. 
+--------------------------------------------------------------------------------------------------------
+
+	coverage exclude -src ./DUT/control_logic.sv -line 135
+	coverage exclude -src ./DUT/control_logic.sv -line 122
+	coverage exclude -src ./DUT/control_logic.sv -line 159
+	coverage exclude -src ./DUT/control_logic.sv -line 144
+coverage type : all
+reason		  : this is checked for done bit to be 0. Ideally it will never reach this state with 
+				done to be 0. the condition for done=1 is checked to make sure of proper working.
+--------------------------------------------------------------------------------------------------------
+
+	coverage exclude -src ./DUT/keypad_scanner.sv -line 64-67
+	coverage exclude -src ./DUT/keypad_scanner.sv -line 89
+	coverage exclude -src ./DUT/control_logic.sv -line 161
+coverage type : all
+reason		  : its default condition that will never get hit by test case, since its an enum state.
+				default condition is added for the systhesis tool to avoid latches.
+--------------------------------------------------------------------------------------------------------				
+
+	coverage exclude -src ./DUT/keypad_scanner.sv -allfalse -line 25 -code b
+coverage type : branch
+reason		  : checks for reset condition to be false
+--------------------------------------------------------------------------------------------------------
+	coverage exclude -scope /top/cal/disp/disp1 -line 16-17 -code sb
+	coverage exclude -du BCD2seg7 -togglenode {leds[7]}
+	coverage exclude -du calculator -togglenode {digit1[7]}
+	coverage exclude -du display -togglenode {seven_seg_data1[7]}
+coverage type : statement, branch , toggle
+reason		  : display 1 is the MSB bit for the 4 digit 7 segment display and will never be displaying
+				decimal point or alphabet E or r on it(alphabets used to display error[Err]).
+--------------------------------------------------------------------------------------------------------
+	coverage exclude -scope /top/cal/disp/disp2 -line 17 -code sb
+	coverage exclude -du calculator -togglenode {digit2[7]}
+	coverage exclude -du display -togglenode {seven_seg_data2[7]}
+coverage type : statement, branch , toggle
+reason		  : display 2 is the hundreds place for the 4 digit 7 segment display and will never be 
+				displaying decimal point or alphabet r on it(alphabets used to display error[Err]).
+--------------------------------------------------------------------------------------------------------
+
+	coverage exclude -scope /top/cal/disp/disp3 -line 16 -code sb
+	coverage exclude -du calculator -togglenode {digit3[7]}
+	coverage exclude -du display -togglenode {seven_seg_data3[7]}
+coverage type : statement, branch , toggle
+reason		  : display 3 is the Tenths place for the 4 digit 7 segment display and will never be 
+				displaying decimal point or alphabet E on it(alphabets used to display error[Err]).
+--------------------------------------------------------------------------------------------------------
+
+	coverage exclude -scope /top/cal/disp/disp4 -line 16 -code sb
+	coverage exclude -du calculator -togglenode {digit4[7]}
+	coverage exclude -du display -togglenode {seven_seg_data4[7]}
+coverage type : statement, branch , toggle
+reason		  : display 4 is the Units place for the 4 digit 7 segment display and will never be 
+				displaying decimal point or alphabet E on it(alphabets used to display error[Err]).
+--------------------------------------------------------------------------------------------------------
+	
+	coverage exclude -du control_logic -togglenode {op_bin1[15:14]}
+	coverage exclude -du BCD2binary -togglenode {bcd[15:8]}
+	coverage exclude -du BCD2binary -togglenode {binary[15:7]}
+coverage type : toggle
+reason		  : These bits cannot toggle since they represent BCD number in binary form. This max BCD
+				number is 9999 and that does not use the MSB 2 bits. So the toggle coverage is excluded.
+--------------------------------------------------------------------------------------------------------
+	
+	coverage exclude -du control_logic -togglenode {op_bin2[15:7]}
+coverage type : toggle
+reason		  : These bit represent operand 2 that is entered through keypad. As per specification the
+				input cannot be more than 2 digits. So the upper 8 bits of this variable is never toggled.
+				this variable has to be 8 bits port pins to connect to ALU.
+--------------------------------------------------------------------------------------------------------
+	coverage exclude -src ./DUT/control_logic.sv -allfalse -line 100 -code b
+	coverage exclude -src ./DUT/control_logic.sv -scope /top/cal/control_logic -allfalse -line 45 -code b
+	coverage exclude -du control_logic -finitial state start
+coverage type : branch, FSM
+reason		  : These lines eliminate the check for branch when false condition occurs. The condition ideally
+				will never have that value in mentioned state, but to avoid undesired detection of signals in
+				this state this condition was introduced. 
+				Also, a switch is added to exclude the fsm coverage which checks for transition from states to
+				initial state due to reset condition.
+--------------------------------------------------------------------------------------------------------
+

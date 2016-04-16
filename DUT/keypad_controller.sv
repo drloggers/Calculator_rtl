@@ -1,0 +1,18 @@
+/* This controller instantiates the keypad scanner and the encoder. 
+ * the encoder provides BCD output corresponding to the key pressed.
+ * it is designed for 4x4 keypad.
+ * -- Sanket
+*/
+module keypad_controller #(parameter cols_count=4,parameter rows_count=4)(
+                           input clk, rst, enable, ack,
+                           input [cols_count-1:0] cols,
+                           input [rows_count-1:0]rows,
+                           output reg [3:0] encode_data,
+                           output reg done);
+
+  wire [cols_count+rows_count-1:0] data;
+
+  keypad_scanner kpad_scanner(.clk(clk), .rst(rst), .start(enable), .rows(rows),.cols(cols),.data(data),.ack(ack),.done(done));
+  keypad_encoder_4x4 kpad_encode(.data(data),.encode_data(encode_data));
+
+endmodule

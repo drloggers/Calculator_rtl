@@ -1,0 +1,33 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><span class="comment">/*%s%This%s%is%s%top%s%level%s%module%s%for%s%calculator%s%which%s%consist%s%of%s%keypad%s%controller,%s%control%s%logic%s%and%s%7-seg%s%display</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="comment">%s%*%s%each%s%display%s%unit%s%has%s%8%s%pins%s%for%s%connection%s%and%s%has%s%4%s%digits%s%display.</span><br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><span class="comment">%s%*%s%--Sanket</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="comment">*/</span><br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span>`<span class="keyattr">timescale</span>%s%1%s%<span class="keyvalu">ns</span>%s%/%s%1%s%<span class="keyvalu">ns</span><br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span><span class="keyword">module</span>%s%calculator%s%#(<span class="keyword">parameter</span>%s%BCDdigits%s%=%s%2,<span class="keyword">parameter</span>%s%cols_count=4,<span class="keyword">parameter</span>%s%rows_count=4)(<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">input</span>%s%clk,rst,start,<br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">output</span>%s%[cols_count-1:0]%s%cols,<br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">input</span>%s%[rows_count-1:0]%s%rows,<br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">reg</span>%s%[7:0]%s%digit1,digit2,digit3,digit4,<br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">reg</span>%s%sign);<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[BCDdigits*4*2-1:0]%s%display;<br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[3:0]encode_data;<br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%done,ack;<br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span><br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%s%%s%keypad_controller%s%kpad_controller(.clk(clk),%s%.rst(rst),%s%.enable(start),%s%.ack(ack),.cols(cols),.rows(rows),.encode_data(encode_data),.done(done));<br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%s%%s%control_logic%s%control_logic(.data(encode_data),%s%.clk(clk),%s%.rst(rst),%s%.done(done),%s%.ack(ack),%s%.display(display),.sign(sign));<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%s%%s%display%s%disp(.display_data(display[15:0]),.seven_seg_data1(digit1),.seven_seg_data2(digit2),.seven_seg_data3(digit3),.seven_seg_data4(digit4));<br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span><br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%s%<span class="keyword">endmodule</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

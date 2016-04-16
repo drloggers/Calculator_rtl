@@ -1,0 +1,38 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><span class="comment">/*%s%This%s%file%s%is%s%for%s%testbench.%s%It%s%mimics%s%the%s%working%s%of%s%physical%s%keypad%s%and%s%returns%s%the%s%row%s%status%s%based%s%on%s%the%s%key%s%pressed</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="comment">*%s%%s%Currently%s%its%s%4x4%s%keypad.%s%following%s%is%s%the%s%layout:</span><br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><span class="comment">*%s%%s%%t%c0%t%c1%t%c2%t%c3%t%</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="comment">*%s%%s%%t%0%t%1%t%2%t%3%t%r0</span><br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span><span class="comment">*%s%%s%%t%4%t%5%t%6%t%7%t%r1</span><br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span><span class="comment">*%s%%s%%t%8%t%9%t%+%t%-%t%r2</span><br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span><span class="comment">*%s%%s%%t%*%t%/%t%=%t%c%t%r3</span><br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span><span class="comment">*</span><br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span><span class="comment">*%s%%s%%t%valid%s%input%s%gives%s%the%s%status%s%of%s%key%s%pressed%s%or%s%unpressed</span><br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span><span class="comment">*%s%%s%%t%valid%s%=%s%1%s%--&gt;%s%key%s%pressed</span><br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span><span class="comment">*%s%%s%%t%valid%s%=%s%0%s%--&gt;%s%key%s%released%s%%s%</span><br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span><span class="comment">*%s%%s%%t%--%s%Sanket%t%</span><br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span><span class="comment">*/</span><br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span>`<span class="keyattr">timescale</span>%s%1%s%<span class="keyvalu">ns</span>%s%/%s%1%s%<span class="keyvalu">ns</span><br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span><span class="keyword">module</span>%s%keypad%s%#(<span class="keyword">parameter</span>%s%cols_count=4,%s%<span class="keyword">parameter</span>%s%rows_count=4)<br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%(<span class="keyword">input</span>%s%[cols_count-1:0]col,<span class="keyword">input</span>%s%[3:0]keyPressed,<span class="keyword">input</span>%s%valid,%s%<br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>[rows_count-1:0]%s%row%s%);<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span><br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%%s%row[0]%s%=%s%((col%s%==%s%4'd1%s%&amp;&amp;%s%keyPressed%s%==%s%4'd12)%s%||%s%(col%s%==%s%4'd2%s%&amp;&amp;%s%keyPressed%s%==%s%4'd13)%s%||%s%(col%s%==%s%4'd4%s%&amp;&amp;%s%keyPressed%s%==%s%4'd14)%s%||%s%(col%s%==%s%4'd8%s%&amp;&amp;%s%keyPressed%s%==%s%4'd15))%s%&amp;&amp;%s%valid;<br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%%s%row[1]%s%=%s%((col%s%==%s%4'd1%s%&amp;&amp;%s%keyPressed%s%==%s%4'd8)%s%||%s%(col%s%==%s%4'd2%s%&amp;&amp;%s%keyPressed%s%==%s%4'd9)%s%||%s%(col%s%==%s%4'd4%s%&amp;&amp;%s%keyPressed%s%==%s%4'd10)%s%||%s%(col%s%==%s%4'd8%s%&amp;&amp;%s%keyPressed%s%==%s%4'd11))%s%&amp;&amp;%s%valid;%s%<br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%%s%row[2]%s%=%s%((col%s%==%s%4'd1%s%&amp;&amp;%s%keyPressed%s%==%s%4'd4)%s%||%s%(col%s%==%s%4'd2%s%&amp;&amp;%s%keyPressed%s%==%s%4'd5)%s%||%s%(col%s%==%s%4'd4%s%&amp;&amp;%s%keyPressed%s%==%s%4'd6)%s%||%s%(col%s%==%s%4'd8%s%&amp;&amp;%s%keyPressed%s%==%s%4'd7))%s%&amp;&amp;%s%valid;%s%<br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%%s%row[3]%s%=%s%((col%s%==%s%4'd1%s%&amp;&amp;%s%keyPressed%s%==%s%4'd0)%s%||%s%(col%s%==%s%4'd2%s%&amp;&amp;%s%keyPressed%s%==%s%4'd1)%s%||%s%(col%s%==%s%4'd4%s%&amp;&amp;%s%keyPressed%s%==%s%4'd2)%s%||%s%(col%s%==%s%4'd8%s%&amp;&amp;%s%keyPressed%s%==%s%4'd3))%s%&amp;&amp;%s%valid;%s%<br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span><br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span><span class="keyword">endmodule</span><br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>
